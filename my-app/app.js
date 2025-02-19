@@ -24,7 +24,7 @@ app.post("/tasks",(req,res)=>{
 
 app.put("/tasks",(req,res)=>{
     const {index,newTask}=req.body;
-    if (index==null||newTask==null){
+    if (index==undefined||newTask==undefined){
         return res.status(400).json({ error: "Index and newTask are required" });
     }
     if(index<0||index>=tasks.length){
